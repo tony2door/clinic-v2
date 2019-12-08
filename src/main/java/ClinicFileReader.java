@@ -10,7 +10,7 @@ import java.util.Map;
 public class ClinicFileReader implements ClinicReader{
     public List<AbstractPatient> readPatients() throws IOException, URISyntaxException {
         List<String> strings = readFileByName("human_patients.txt");
-
+//aici facem split
         return null;
     }
     public Map<Integer, String> readProblems() throws IOException, URISyntaxException {
