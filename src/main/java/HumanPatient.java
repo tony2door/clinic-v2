@@ -6,9 +6,9 @@ public class HumanPatient extends AbstractPatient {
 
     @Override
     public String toString() {
-        return "HumanPatient{" +
+        return "HumanPatient {" +
                 "patientId=" + patientId +
                 ", patientName='" + patientName + '\'' +
-                '}';
+                '}' + "\n";
     }
 }
