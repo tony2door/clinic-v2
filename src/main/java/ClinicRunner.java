@@ -8,6 +8,7 @@ public class ClinicRunner {
         List<AbstractPatient>patients = fileReader.readPatients();
         System.out.println(patients);
         AbstractClinic clinic = new HumanClinic();
+        clinic.addBulkPatients(patients);
         clinic.listPatients();
     }
 }
