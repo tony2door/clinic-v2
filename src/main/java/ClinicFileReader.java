@@ -30,7 +30,6 @@ public class ClinicFileReader implements ClinicReader {
         }
         return patients;
     }
-
     public Map<Integer, String> readProblems() throws IOException, URISyntaxException {
         List<String> strings = readFileByName(type.getProblemstxt());
 
