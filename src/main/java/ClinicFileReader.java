@@ -18,7 +18,8 @@ public class ClinicFileReader implements ClinicReader {
             String[] split = patientsSplit.split(",");
             int patientId = Integer.parseInt(split[0]);
             String patientName = split[1];
-            AbstractPatient humanPatient = new HumanPatient(patientId, patientName);
+            int problemID = Integer.parseInt(split[2]);
+            AbstractPatient humanPatient = new HumanPatient(patientId, patientName,problemID);
             patients.add(humanPatient);
         }
         return patients;
