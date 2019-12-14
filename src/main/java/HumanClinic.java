@@ -2,11 +2,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HumanClinic extends AbstractClinic{
+public class HumanClinic extends AbstractClinic {
     Map<Integer, String> currentPatients = new HashMap<>();
+
     @Override
     public void addPatient(AbstractPatient patient) {
-        currentPatients.put(patient.patientId,patient.patientName);
+        currentPatients.put(patient.patientId, patient.patientName);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class HumanClinic extends AbstractClinic{
 
     @Override
     public void listPatients() {
-        for (Map.Entry<Integer, String> ap : currentPatients.entrySet()){
+        for (Map.Entry<Integer, String> ap : currentPatients.entrySet()) {
             System.out.println(ap.getKey() + " " + ap.getValue());
         }
     }

@@ -8,18 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ClinicFileReader implements ClinicReader{
+public class ClinicFileReader implements ClinicReader {
     public List<AbstractPatient> readPatients() throws IOException, URISyntaxException {
         List<String> strings = readFileByName("human_patients.txt");
 //aici facem split
         List<AbstractPatient> patients = new ArrayList<>();
         for (int i = 0; i < strings.size(); i++) {
-        String patientsSplit = strings.get(i);
-        String[]split =patientsSplit.split(",");
+            String patientsSplit = strings.get(i);
+            String[] split = patientsSplit.split(",");
             int patientId = Integer.parseInt(split[0]);
             String patientName = split[1];
-        AbstractPatient humanPatient = new HumanPatient(patientId,patientName);
-        patients.add(humanPatient);
+            AbstractPatient humanPatient = new HumanPatient(patientId, patientName);
+            patients.add(humanPatient);
         }
         return patients;
     }
@@ -30,7 +30,7 @@ public class ClinicFileReader implements ClinicReader{
         return null;
     }
 
-    private List<String>readFileByName(String fileName) throws URISyntaxException, IOException {
+    private List<String> readFileByName(String fileName) throws URISyntaxException, IOException {
         URI patients = ClassLoader.getSystemResource(fileName).toURI();
         Path pathOfPatients = Paths.get(patients);
         return Files.readAllLines(pathOfPatients);
