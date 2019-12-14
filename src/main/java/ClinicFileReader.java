@@ -9,8 +9,14 @@ import java.util.List;
 import java.util.Map;
 
 public class ClinicFileReader implements ClinicReader {
+    PatientTypes type;
+
+    public ClinicFileReader(PatientTypes type) {
+        this.type = type;
+    }
+
     public List<AbstractPatient> readPatients() throws IOException, URISyntaxException {
-        List<String> strings = readFileByName("human_patients.txt");
+        List<String> strings = readFileByName(type.getPatientstxt());
 //aici facem split
         List<AbstractPatient> patients = new ArrayList<>();
         for (int i = 0; i < strings.size(); i++) {
@@ -26,7 +32,7 @@ public class ClinicFileReader implements ClinicReader {
     }
 
     public Map<Integer, String> readProblems() throws IOException, URISyntaxException {
-        List<String> strings = readFileByName("human_problems.txt");
+        List<String> strings = readFileByName(type.getProblemstxt());
 
         return null;
     }
