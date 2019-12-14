@@ -20,18 +20,27 @@ public class ClinicFileReader implements ClinicReader {
         List<String> strings = readFileByName(type.getPatientstxt());
 //aici facem split
         List<AbstractPatient> patients = new ArrayList<>();
+        Map<Integer, String> problems = readProblems();
         for (int i = 0; i < strings.size(); i++) {
             String patientsSplit = strings.get(i);
             String[] split = patientsSplit.split(",");
             int patientId = Integer.parseInt(split[0]);
             String patientName = split[1];
             int pacientProblemID = Integer.parseInt(split[2]);
-            AbstractPatient humanPatient = new HumanPatient(patientId, patientName);
-            patients.add(humanPatient);
+            String problemName = problems.get(pacientProblemID);
+            if(type==PatientTypes.HUMANPATIENTS){
+                AbstractPatient tempPatient = new HumanPatient(patientId,patientName,problemName);
+                patients.add(tempPatient);
+            }
+            else if(type==PatientTypes.PETPATIENTS){
+                AbstractPatient tempPatient = new PetPatient(patientId,patientName);
+                patients.add(tempPatient);
+            }
         }
         return patients;
     }
     public Map<Integer, String> readProblems() throws IOException, URISyntaxException {
+
         List<String> strings = readFileByName(type.getProblemstxt());
         Map<Integer,String> problems = new HashMap<>();
         for (int i = 0; i < strings.size(); i++) {
@@ -40,7 +49,6 @@ public class ClinicFileReader implements ClinicReader {
             int problemID = Integer.parseInt(split[0]);
             String problemName = split[1];
             problems.put(problemID,problemName);
-
         }
         return problems;
     }

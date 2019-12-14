@@ -7,6 +7,9 @@ public class HumanClinic extends AbstractClinic {
 
     @Override
     public void addPatient(AbstractPatient patient) {
+        if (patient == null){
+            throw new IllegalArgumentException("patients must not be null");
+        }
         currentPatients.put(patient.patientId, patient);
     }
 
