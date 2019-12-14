@@ -16,9 +16,7 @@ factoryConfiguration.json
 *.log
 
 # BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
+*.ctxt     """"""./
 .mtj.tmp/
 
 # Package Files #
