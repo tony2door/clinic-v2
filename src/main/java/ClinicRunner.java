@@ -9,6 +9,7 @@ public class ClinicRunner {
         System.out.println(patients);
         AbstractClinic clinic = new HumanClinic();
         clinic.addBulkPatients(patients);
+        clinic.removePatientByPatientId(3);
         clinic.listPatients();
     }
 }

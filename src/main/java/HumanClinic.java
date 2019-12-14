@@ -23,7 +23,8 @@ public class HumanClinic extends AbstractClinic{
 
     @Override
     public void removePatientByPatientId(Integer patientId) {
-    currentPatients.remove(patientId);
+
+        currentPatients.remove(patientId);
     }
 
     @Override
