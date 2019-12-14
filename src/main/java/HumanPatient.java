@@ -1,7 +1,7 @@
 public class HumanPatient extends AbstractPatient {
 
-    public HumanPatient(int patientId, String patientName, int problemID) {
-        super(patientId, patientName, problemID);
+    public HumanPatient(int patientId, String patientName) {
+        super(patientId, patientName);
     }
 
     @Override
