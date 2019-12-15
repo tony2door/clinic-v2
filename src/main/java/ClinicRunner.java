@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ClinicRunner {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        ClinicReader fileReader = new ClinicFileReader(PatientTypes.PETPATIENTS);
+        ClinicReader fileReader = new ClinicFileReader(PatientTypes.HUMANPATIENTS);
         List<AbstractPatient> patients = fileReader.readPatients();
         System.out.println(patients);
         AbstractClinic clinic = new HumanClinic();

@@ -11,14 +11,13 @@ public abstract class AbstractPatient {
         this.patientId = patientId;
         this.patientName = patientName;
         this.problemName = problemName;
-        System.out.println("Human patient " + patientName + " suffering from " + problemName + " has been added");
+
     }
 
 
     public AbstractPatient(int patientId, String patientName) {
         this.patientId = patientId;
         this.patientName = patientName;
-        System.out.println("Human patient " + patientName + " suffering from " + problemName + " has been added");
     }
 
     public int getPatientId() {
