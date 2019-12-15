@@ -2,8 +2,9 @@ public class PetPatient extends AbstractPatient {
 
 
 
-    public PetPatient(int patientId, String patientName) {
-        super(patientId, patientName);
+    public PetPatient(int patientId, String patientName, String problemName) {
+
+        super(patientId, patientName, problemName);
     }
 
     @Override

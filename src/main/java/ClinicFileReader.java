@@ -33,7 +33,7 @@ public class ClinicFileReader implements ClinicReader {
                 patients.add(tempPatient);
             }
             else if(type==PatientTypes.PETPATIENTS){
-                AbstractPatient tempPatient = new PetPatient(patientId,patientName);
+                AbstractPatient tempPatient = new PetPatient(patientId,patientName,problemName);
                 patients.add(tempPatient);
             }
         }
