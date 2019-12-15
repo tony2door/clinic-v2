@@ -31,8 +31,7 @@ public class ClinicFileReader implements ClinicReader {
             if(type==PatientTypes.HUMANPATIENTS){
                 AbstractPatient tempPatient = new HumanPatient(patientId,patientName,problemName);
                 patients.add(tempPatient);
-            }
-            else if(type==PatientTypes.PETPATIENTS){
+            } else if(type==PatientTypes.PETPATIENTS){
                 AbstractPatient tempPatient = new PetPatient(patientId,patientName,problemName);
                 patients.add(tempPatient);
             }
